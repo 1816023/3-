@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/Project1/Project1/Log.txt
+/Project1/Project1/Project1.vcxproj.user
+/Project1/Project1/Project1.vcxproj
+/Project1/Project1/Project1.vcxproj.filters

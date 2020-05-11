@@ -1,0 +1,37 @@
+﻿  playerUI.cpp
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(28,71): warning C4838:  'double' から 'float' への変換には縮小変換が必要です
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(28,71): warning C4244:  '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(30,58): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(30,37): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(30,26): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(30,16): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(31,62): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(31,39): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(31,26): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(31,16): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(32,31): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(32,19): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(34,73): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(34,58): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(34,44): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(34,32): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(35,72): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(35,57): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(35,44): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(35,32): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(36,50): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(36,35): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(38,81): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(38,67): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(38,40): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(38,29): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(39,89): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(39,74): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(39,44): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(39,32): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(40,50): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(40,35): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(42,41): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(43,41): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Project1\playerUI.cpp(45,100): warning C4244:  '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Project1.vcxproj -> D:\desktop\ASO\プログラム\自作カードゲーム案\Project1\Debug\Project1.exe
