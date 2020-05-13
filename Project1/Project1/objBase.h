@@ -3,8 +3,11 @@
 #include<vector>
 #include<string>
 #include"objMng.h"
+#include "ImageMng.h"
+#include "PhasesMng.h"
 #define SCREEN_SIZE_X 820
 #define SCREEN_SIZE_Y 640
+class PhasesMng;
 enum OBJCT_TYPE
 {
 	TYPE_PLAYER,
@@ -32,8 +35,8 @@ public:
 	objBase(std::string image_name);
 	~objBase();
 	virtual bool Init() = 0;
-	virtual void update(std::vector<objBase*>&obj,char* getKey) = 0;
-	virtual void Draw();
+	virtual void update(std::vector<objBase*>&obj,char* getKey,PhasesMng* phases) = 0;
+	virtual void Draw(PhasesMng* phases);
 	virtual OBJCT_TYPE GetObjctType();
 	virtual std::string GetImageName();
 	virtual VECTOR GetPos() { return data.pos; }

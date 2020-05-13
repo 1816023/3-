@@ -9,8 +9,8 @@ public:
 	enemy(std::string image_name,VECTOR pos);
 	~enemy();
 	bool Init();
-	void update(std::vector<objBase*>&obj, char* getKey);
-	void Draw();
+	void update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases);
+	void Draw(PhasesMng* phases);
 	void damage();
 	bool GetDamageFlag() { return damageFlag; }
 private:

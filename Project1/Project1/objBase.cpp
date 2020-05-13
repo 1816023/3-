@@ -10,7 +10,7 @@ objBase::~objBase()
 {
 }
 
-void objBase::Draw()
+void objBase::Draw(PhasesMng* phases)
 {
 	DrawGraph(data.pos.x, data.pos.y, lpObjMng.GetObj(data.imageName)[0], true);
 }

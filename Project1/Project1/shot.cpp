@@ -24,7 +24,7 @@ bool shot::Init()
 	return true;
 }
 
-void shot::update(std::vector<objBase*>&obj, char* getKey)
+void shot::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 {
 	switch (shot_type)
 	{

@@ -1,5 +1,5 @@
 #include "enemy.h"
-
+#include"ImageMng.h"
 
 
 enemy::enemy(std::string image_name,VECTOR pos):objBase(image_name)
@@ -18,16 +18,14 @@ bool enemy::Init()
 	data.imageSize = { 64,45 };
 	lpObjMng.GetObj(data.imageName, { 65,45 }, {2,1});
 	//LoadDivGraph(data.imageName.c_str(), 2, 2, 1, 64, 45, data.imageDivH);
-	netaImageH[0]=LoadGraph("data/neta/ñ≥åæÇÃï†ÉpÉì.jpg");
-	netaImageH[1]= LoadGraph("data/neta/êlÇÃó~ÇÕèIÇÌÇÁÇÀÇ¶.jpg");
-	netaImageH[2] = LoadGraph("data/neta/kusaka.jpg");
+	
 	damageFlag = false;
 	LRMoveFlag = true;
 	deathCnt = DEATH_CNT;
 	return true;
 }
 
-void enemy::update(std::vector<objBase*>&obj, char* getKey)
+void enemy::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 {
 	move();
 	if (damageFlag)
@@ -38,11 +36,18 @@ void enemy::update(std::vector<objBase*>&obj, char* getKey)
 			deathFlag = true;
 		}
 	}
+	if (phases->GetNowPhases() == ENEMY_TURN)
+	{
+		phases->ChangePhases(PHASES_DRAW);
+	}
 }
 
-void enemy::Draw()
+void enemy::Draw( PhasesMng* phases)
 {
-	
+	if (phases->GetNowPhases() == ENEMY_TURN)
+	{
+		DrawGraph(0, 320 - 60, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
+	}
 	
 }
 
@@ -54,24 +59,5 @@ void enemy::damage()
 
 void enemy::move()
 {
-	if (!damageFlag)
-	{
-		if (LRMoveFlag)
-		{
-			data.pos.x += MOVE_SPEED;
-		}
-		else {
-			data.pos.x -= MOVE_SPEED;
-		}
-	}
-	if (data.pos.x < 0)
-	{
-		data.pos.x = 0;
-		LRMoveFlag = (!LRMoveFlag ? true: false);
-	}
-	else if (data.pos.x > SCREEN_SIZE_X - 64) {
-		data.pos.x = SCREEN_SIZE_X - 64;
-		LRMoveFlag = (LRMoveFlag ? false : true);
-	}
-	else {}
+	
 }

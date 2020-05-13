@@ -14,10 +14,8 @@ bool PhasesEnd::Init()
 	return false;
 }
 
-void PhasesEnd::Updata(std::vector<PhasesBase*>& ph_vec)
+void PhasesEnd::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases)
 {
+	now_phases = ENEMY_TURN;
 }
 
-void PhasesEnd::Draw(std::vector<PhasesBase*> &ph_vec)
-{
-}

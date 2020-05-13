@@ -8,8 +8,9 @@ public:
 	player(std::string image_name);
 	~player();
 	bool Init();
-	void update(std::vector<objBase*>&obj, char* getKey);
+	void update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases);
 	void damage();
+	void Draw(PhasesMng* phases);
 	virtual int GetShotType()override;
 	//void Draw();
 private:

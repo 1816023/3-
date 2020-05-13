@@ -29,10 +29,17 @@ void PhasesMng::updata()
 {
 	if (now_phases != ENEMY_TURN)
 	{
-		ph_vec[now_phases]->Updata(ph_vec);
-		ph_vec[now_phases]->Draw(ph_vec);
+		ph_vec[now_phases]->Updata(ph_vec,now_phases);
 	}
 	
+}
+
+void PhasesMng::Draw()
+{
+	if (now_phases != ENEMY_TURN)
+	{
+		ph_vec[now_phases]->Draw(ph_vec,now_phases);
+	}
 }
 
 void PhasesMng::Dehtroy()
@@ -41,4 +48,9 @@ void PhasesMng::Dehtroy()
 	{
 		delete(phases);
 	}
+}
+
+void PhasesMng::ChangePhases(PHASESTYPE phases)
+{
+	now_phases = phases;
 }

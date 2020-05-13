@@ -8,8 +8,8 @@ public:
 	shot(std::string image_name, VECTOR pos, SHOT_TYPE type, VECTOR enemy_pos = {});
 	~shot();
 	bool Init();
-	void update(std::vector<objBase*>&obj,char* getKey);
-	void damage();
+	void update(std::vector<objBase*>&obj,char* getKey, PhasesMng* phases);
+	void damage( );
 private:
 	SHOT_TYPE shot_type;
 	VECTOR enemy_pos;

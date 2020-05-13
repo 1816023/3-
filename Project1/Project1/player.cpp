@@ -25,14 +25,19 @@ bool player::Init()
 	return true;
 }
 
-void player::update(std::vector<objBase*>&obj, char* getKey)
+void player::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 {
 	
 
 }
 
-void player::damage()
+void player::damage( )
 {
+}
+
+void player::Draw(PhasesMng* phases)
+{
+
 }
 
 int player::GetShotType()
