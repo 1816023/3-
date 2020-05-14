@@ -1,3 +1,4 @@
+#include "DeckMng.h"
 #include "player.h"
 #include "shot.h"
 player::player(std::string image_name):objBase(image_name)
@@ -16,12 +17,20 @@ bool player::Init()
 	data.pos = {SCREEN_SIZE_X/2-data.imageSize.x/2,SCREEN_SIZE_Y/4*3};
 	
 	data.objType = TYPE_PLAYER;
-	shot_type = SHOT_NORMAL;
 	for (int i= 0; i < 255; i++)
 	{
 		keyTriger[i] = false;
 	}
-
+	state = {
+		40,
+		20,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	};
 	return true;
 }
 
@@ -40,10 +49,7 @@ void player::Draw(PhasesMng* phases)
 
 }
 
-int player::GetShotType()
-{
-	return  shot_type;
-}
+
 
 
 

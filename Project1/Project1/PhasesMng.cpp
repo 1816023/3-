@@ -3,6 +3,7 @@
 #include "PhasesDraw.h"
 #include "PhasesEnd.h"
 #include "PhasesStanby.h"
+#include "DeckMng.h"
 #include "PhasesMng.h"
 
 PhasesMng::PhasesMng()
@@ -21,7 +22,8 @@ bool PhasesMng::Init()
 	ph_vec[PHASES_STNBY] = new PhasesStanby("data/texture/StandbyImage.png");
 	ph_vec[PHASES_ATTACK] = new PhasesAttack("data/texture/AttackImage.png");
 	ph_vec[PHASES_END] = new PhasesEnd("data/texture/EndImage.png");
-
+	card = new DeckMng();
+	card->Init();
 	return false;
 }
 
@@ -29,7 +31,7 @@ void PhasesMng::updata()
 {
 	if (now_phases != ENEMY_TURN)
 	{
-		ph_vec[now_phases]->Updata(ph_vec,now_phases);
+		ph_vec[now_phases]->Updata(ph_vec,now_phases,card);
 	}
 	
 }
@@ -38,7 +40,7 @@ void PhasesMng::Draw()
 {
 	if (now_phases != ENEMY_TURN)
 	{
-		ph_vec[now_phases]->Draw(ph_vec,now_phases);
+		ph_vec[now_phases]->Draw(ph_vec,now_phases,card);
 	}
 }
 

@@ -9,7 +9,7 @@ PhasesBase::~PhasesBase()
 {
 }
 
-void PhasesBase::Draw(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases)
+void PhasesBase::Draw(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases, DeckMng* card)
 {
 	DrawGraph(0, 320 - 60, IMAGE_ID(image_name)[0], true);
 

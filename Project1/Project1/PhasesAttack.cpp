@@ -14,7 +14,7 @@ bool PhasesAttack::Init()
 	return false;
 }
 
-void PhasesAttack::Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases)
+void PhasesAttack::Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases, DeckMng* card)
 {
 	VECTOR2 m_pos;
 	GetMousePoint(&m_pos.x, &m_pos.y);

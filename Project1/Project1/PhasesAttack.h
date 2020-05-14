@@ -7,7 +7,7 @@ public:
 	PhasesAttack(std::string image_name);
 	~PhasesAttack();
 	bool Init();
-	void Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases);
+	void Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases, DeckMng* card);
 private:
 };
 

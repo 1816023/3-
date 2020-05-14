@@ -14,7 +14,7 @@ bool PhasesEnd::Init()
 	return false;
 }
 
-void PhasesEnd::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases)
+void PhasesEnd::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases, DeckMng* card)
 {
 	now_phases = ENEMY_TURN;
 }

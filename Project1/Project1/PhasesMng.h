@@ -10,6 +10,7 @@ enum PHASESTYPE {
 	PHASES_MAX
 };
 class PhasesBase;
+class DeckMng;
 class PhasesMng
 {
 public:
@@ -24,5 +25,7 @@ public:
 private:
 	PHASESTYPE now_phases;
 	std::vector<PhasesBase*> ph_vec;
+	DeckMng* card;
+
 };
 

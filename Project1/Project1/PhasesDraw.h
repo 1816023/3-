@@ -7,8 +7,8 @@ public:
 	PhasesDraw(std::string image_name);
 	~PhasesDraw();
 	bool Init();
-	void Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases);
+	void Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases, DeckMng* card);
 private:
-
+	bool drawF;
 };
 
