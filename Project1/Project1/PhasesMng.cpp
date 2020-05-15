@@ -3,7 +3,6 @@
 #include "PhasesDraw.h"
 #include "PhasesEnd.h"
 #include "PhasesStanby.h"
-#include "DeckMng.h"
 #include "PhasesMng.h"
 
 PhasesMng::PhasesMng()
@@ -55,4 +54,9 @@ void PhasesMng::Dehtroy()
 void PhasesMng::ChangePhases(PHASESTYPE phases)
 {
 	now_phases = phases;
+}
+
+std::vector<CardData> PhasesMng::GetHand()
+{
+	return card->GetHand();
 }

@@ -5,8 +5,9 @@
 #include"objMng.h"
 #include "ImageMng.h"
 #include "PhasesMng.h"
-#define SCREEN_SIZE_X 820
-#define SCREEN_SIZE_Y 640
+#include "PhasesBase.h"
+#define SCREEN_SIZE_X 1230
+#define SCREEN_SIZE_Y 960
 class PhasesMng;
 enum OBJCT_TYPE
 {
@@ -43,9 +44,10 @@ public:
 	virtual OBJCT_TYPE GetObjType() { return data.objType; }
 	virtual obj_data GetObjData() { return data; }
 	virtual bool PlaeseDeath() { return deathFlag; };
-	virtual void damage() = 0;
+	virtual void damage(int damage_num) = 0;		//ˆø”‚Í—^‚¦‚é–hŒä—Í‚ğŒvZ‚µ‚Ä‚È‚¢ÀŞÒ°¼Ş
+	virtual void attack(std::vector<objBase*>& obj)=0;
+	virtual int GetDefense()=0;
 	virtual bool GetDamageFlag() { return false; }
-	virtual int GetShotType();
 private:
 	
 protected:

@@ -8,7 +8,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 {
 
 	// 画面モードの設定
-	SetGraphMode(820, 640, 16);		// 解像度を640*480、colorを16bitに設定.
+	SetGraphMode(1230, 960, 16);		// 解像度を640*480、colorを16bitに設定.
 	ChangeWindowMode(TRUE);			// ウインドウモードに.
 
 	// ＤＸライブラリ初期化処理

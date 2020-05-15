@@ -22,6 +22,9 @@ bool enemy::Init()
 	damageFlag = false;
 	LRMoveFlag = true;
 	deathCnt = DEATH_CNT;
+	state = {
+		10,10,3,0,0,2,0,0,IMAGE_ID("data/texture/enemy_sra.png")[0]
+	};
 	return true;
 }
 
@@ -46,15 +49,30 @@ void enemy::Draw( PhasesMng* phases)
 {
 	if (phases->GetNowPhases() == ENEMY_TURN)
 	{
-		DrawGraph(0, 320 - 60, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
+		DrawRotaGraph(SCREEN_SIZE_X/2, SCREEN_SIZE_Y/2 - 60,1.5,0, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
 	}
-	
 }
 
-void enemy::damage()
+void enemy::damage(int damage_num)
 {
 	damageFlag = true;
-	netanum = rand() % 3;
+	state.HP -= GetDefense() - damage_num;
+}
+
+void enemy::attack(std::vector<objBase*>& obj)
+{
+	for (auto itr : obj)
+	{
+		if (itr->GetObjctType() == TYPE_PLAYER)
+		{
+			itr->damage(state.attack + state.add_attack + state.def_attack);
+		}
+	}
+}
+
+int enemy::GetDefense()
+{
+	return state.defense+state.add_defence+state.def_defense;
 }
 
 void enemy::move()

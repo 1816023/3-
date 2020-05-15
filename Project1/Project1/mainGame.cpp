@@ -1,6 +1,5 @@
 #include "player.h"
 #include "enemy.h"
-#include "shot.h"
 #include "playerUI.h"
 #include "PhasesMng.h"
 #include "mainGame.h"
@@ -59,12 +58,12 @@ void mainGame::Draw()
 	DrawBox(0, 0, SCREEN_SIZE_X, SCREEN_SIZE_Y, 0x009900, true);
 	for (auto itr : obj)
 	{
-		itr->Draw(phases);
+		
 		if (itr->GetObjctType() == TYPE_PLAYER)
 		{
 			UI->Draw(itr);
 		}
-		
+		itr->Draw(phases);
 	}
 	phases->Draw();
 	DrawFormatString(0, 0, 0xffffff, "%d\n", obj.size());

@@ -19,16 +19,8 @@ void PhasesDraw::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases
 {
 	if (!drawF)
 	{
-		if (card->GetHand().size() >= 5)
-		{
-
-			card->Draw(1);
-		}
-		else
-		{
-			card->Draw();
-			drawF = true;
-		}
+		card->Draw();
+		drawF = true;
 	}
 	
 	
@@ -38,7 +30,7 @@ void PhasesDraw::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases
 	GetMousePoint(&m_pos.x, &m_pos.y);
 	if ((GetMouseInput() & MOUSE_INPUT_LEFT)!=0)
 	{
-		if (((m_pos.x>=10&&m_pos.y>=260+20)&(m_pos.x>=10&&m_pos.y<=260+60)&(m_pos.x<=180&&m_pos.y>=260+20)&(m_pos.x<=180&&m_pos.y<=260+60))==1)
+		if (((m_pos.x>=10*1.5&&m_pos.y>=260*1.5)&(m_pos.x>=10*1.5&&m_pos.y<=260*1.5+60)&(m_pos.x<=180*1.5&&m_pos.y>=260*1.5)&(m_pos.x<=180*1.5&&m_pos.y<=260*1.5+60))==1)
 		{
 			now_phases = PHASES_STNBY;
 			drawF = false;

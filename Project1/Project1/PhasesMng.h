@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "DeckMng.h"
 
 enum PHASESTYPE {
 	PHASES_DRAW,
@@ -22,6 +23,8 @@ public:
 	void Dehtroy();
 	PHASESTYPE GetNowPhases() { return now_phases; }
 	void ChangePhases(PHASESTYPE phases);
+	std::vector<CardData> GetHand();
+
 private:
 	PHASESTYPE now_phases;
 	std::vector<PhasesBase*> ph_vec;

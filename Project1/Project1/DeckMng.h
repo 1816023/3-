@@ -18,8 +18,6 @@ struct CardData {
 	int image_handle;
 	int attack;				//攻撃力(防具、アイテムの場合はなし)
 	int defense;			//防御力(武器、アイテムの場合はなし)
-	int durability;			//耐久力(アイテムの場合は1か0
-	
 };
 class DeckMng
 {
@@ -29,9 +27,8 @@ public:
 	bool Init();
 	CardData Choice(std::string name);	//名前でカードを検索、なかった場合は空のデータを返す
 	CardData Choice(int num);			//番号でカードを検索、なかった場合は空のデータを返す
-	CardData Draw();					//ランダムで1枚選ぶ
-	CardData Draw(int num);				//指定された1枚を捨てて1枚ランダムで引く	
-	std::vector<CardData>GetHand();
+	CardData Draw();					//手札をすべて消してランダムで5枚選ぶ
+	std::vector<CardData>GetHand();		
 private:
 	std::vector<CardData>deck_vec;
 	std::map<std::string, CardData>cardData_map;

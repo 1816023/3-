@@ -11,6 +11,7 @@ struct PlayerStat
 	int defense;			//防御力
 	int add_defence;		//アイテムなどによるそのターン限りの追加防御力
 	int def_defense;		//アイテムや敵によるデバフの減算分防御力
+	int card_handle;		//画像ハンドル
 	CardData weapon_card;	//装備している武器カード
 	CardData armor_card;	//装備している防具カード
 };
@@ -22,8 +23,11 @@ public:
 	~player();
 	bool Init();
 	void update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases);
-	void damage();
-	void Draw(PhasesMng* phases);
+	void damage(int damage_num);
+	void Draw(PhasesMng* phases);		//描画
+	PlayerStat GetPlayerState() { return state; }
+	void attack(std::vector<objBase*>& obj);
+	int GetDefense();
 	//void Draw();
 private:
 	void move(char* getKey);
