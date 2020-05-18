@@ -13,7 +13,15 @@ DeckMng::~DeckMng()
 
 bool DeckMng::Init()
 {
-	
+	cardData_map["NullCard"] = {
+	"NullCard",
+	NULL_CARD,
+	500,
+	"data/card/N00.png",
+	IMAGE_ID("data/card/N00.png")[0],
+	0,
+	0
+	};
 	cardData_map["ƒqƒmƒL‚Ì–_"] = {
 	"ƒqƒmƒL‚Ì–_",
 	WEAPON_CARD,
@@ -89,4 +97,15 @@ std::vector<CardData> DeckMng::GetHand()
 {
 
 	return hand_vec;
+}
+
+void DeckMng::DelHand(int number)
+{
+	
+	hand_vec.erase(hand_vec.begin()+number);
+}
+
+void DeckMng::ChangeHand(int num, CardData data)
+{
+	hand_vec[num] = data;
 }

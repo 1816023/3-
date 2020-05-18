@@ -12,19 +12,21 @@ enum PHASESTYPE {
 };
 class PhasesBase;
 class DeckMng;
+class objBase;
 class PhasesMng
 {
 public:
 	PhasesMng();
 	~PhasesMng();
 	bool Init();
-	void updata();
+	void updata(std::vector<objBase*> obj);
 	void Draw();
 	void Dehtroy();
 	PHASESTYPE GetNowPhases() { return now_phases; }
 	void ChangePhases(PHASESTYPE phases);
 	std::vector<CardData> GetHand();
-
+	void DelHand(int number);
+	void ChangeHand(int num, CardData data);
 private:
 	PHASESTYPE now_phases;
 	std::vector<PhasesBase*> ph_vec;

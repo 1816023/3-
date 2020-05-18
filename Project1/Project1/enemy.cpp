@@ -22,23 +22,15 @@ bool enemy::Init()
 	damageFlag = false;
 	LRMoveFlag = true;
 	deathCnt = DEATH_CNT;
-	state = {
-		10,10,3,0,0,2,0,0,IMAGE_ID("data/texture/enemy_sra.png")[0]
-	};
+	enemy_data["スライム"] = { 10,10,3,0,0,0,0,0,IMAGE_ID("data/texture/enemy_sra.png")[0],10 };
+	state = enemy_data["スライム"];
 	return true;
 }
 
 void enemy::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 {
 	move();
-	if (damageFlag)
-	{
-		deathCnt--;
-		if (deathCnt<0)
-		{
-			deathFlag = true;
-		}
-	}
+	attack(obj);
 	if (phases->GetNowPhases() == ENEMY_TURN)
 	{
 		phases->ChangePhases(PHASES_DRAW);
@@ -51,12 +43,13 @@ void enemy::Draw( PhasesMng* phases)
 	{
 		DrawRotaGraph(SCREEN_SIZE_X/2, SCREEN_SIZE_Y/2 - 60,1.5,0, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
 	}
+	DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 1, 0, IMAGE_ID("data/texture/enemy_sra.png")[0], true);
+	DrawFormatString(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 0xff0000, "%d\n", state.HP);
 }
 
 void enemy::damage(int damage_num)
 {
-	damageFlag = true;
-	state.HP -= GetDefense() - damage_num;
+	state.HP += (GetDefense() - damage_num>0?0: GetDefense() - damage_num);
 }
 
 void enemy::attack(std::vector<objBase*>& obj)
@@ -73,6 +66,10 @@ void enemy::attack(std::vector<objBase*>& obj)
 int enemy::GetDefense()
 {
 	return state.defense+state.add_defence+state.def_defense;
+}
+
+void enemy::Standby(DeckMng* card)
+{
 }
 
 void enemy::move()

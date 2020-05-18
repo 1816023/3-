@@ -12,7 +12,8 @@ playerUI::~playerUI()
 
 bool playerUI::Init()
 {
-	
+	FontHandle = CreateFontToHandle(NULL, 90, -1, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+
 	return true;
 }
 
@@ -45,6 +46,7 @@ void playerUI::Draw(objBase* obj)
 	DrawString(SCREEN_SIZE_X / 2 - GetDrawFormatStringWidth("ŽèŽD") / 2, SCREEN_SIZE_Y - crd_size.y + 20, "ŽèŽD", 0x000000);
 	SetFontSize(def_font_size);
 	
+	DrawFormatStringToHandle(SCREEN_SIZE_X/1.3f, SCREEN_SIZE_Y/1.6, 0xff0000, FontHandle, "HP:%d\n", obj->GetHP());
 
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 	

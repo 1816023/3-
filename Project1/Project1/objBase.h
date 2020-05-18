@@ -48,6 +48,9 @@ public:
 	virtual void attack(std::vector<objBase*>& obj)=0;
 	virtual int GetDefense()=0;
 	virtual bool GetDamageFlag() { return false; }
+	virtual void Standby(DeckMng* card)=0;
+	virtual void Reset();
+	virtual int GetHP() = 0;
 private:
 	
 protected:

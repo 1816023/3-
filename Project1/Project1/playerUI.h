@@ -10,5 +10,7 @@ public:
 	void Draw(objBase* obj);
 private:
 	std::vector<std::string> shot_type_name;
+	int FontHandle;
+
 };
 

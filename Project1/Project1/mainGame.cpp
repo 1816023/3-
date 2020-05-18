@@ -39,9 +39,12 @@ void mainGame::Update()
 	{
 		obj[i]->update(obj, getKey,phases);
 		deleteObjNum.push_back(obj[i]->PlaeseDeath()?i:-1);
+		
 	}
 	
-	
+	UI->Updata(obj);
+	phases->updata(obj);
+
 	for(auto obj_itr:deleteObjNum)
 	if (obj_itr != -1)
 	{
@@ -49,8 +52,6 @@ void mainGame::Update()
 		
 		obj.erase(obj.begin()+obj_itr);
 	}
-	UI->Updata(obj);
-	phases->updata();
 }
 
 void mainGame::Draw()

@@ -15,18 +15,22 @@ bool PhasesDraw::Init()
 	return false;
 }
 
-void PhasesDraw::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases, DeckMng* card)
+void PhasesDraw::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases, DeckMng* card, std::vector<objBase*> obj)
 {
-	if (!drawF)
+
+	card->Draw();
+	
+	for (auto itr : obj)
 	{
-		card->Draw();
-		drawF = true;
+		if (itr->GetObjType() == TYPE_PLAYER)
+		{
+			itr->Reset();
+		}
 	}
 	
-	
+	now_phases = PHASES_STNBY;
 
-
-	VECTOR2 m_pos;
+	/*VECTOR2 m_pos;
 	GetMousePoint(&m_pos.x, &m_pos.y);
 	if ((GetMouseInput() & MOUSE_INPUT_LEFT)!=0)
 	{
@@ -35,7 +39,7 @@ void PhasesDraw::Updata(std::vector<PhasesBase*>& ph_vec, PHASESTYPE& now_phases
 			now_phases = PHASES_STNBY;
 			drawF = false;
 		}
-	}
+	}*/
 	
 }
 

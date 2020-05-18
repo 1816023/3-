@@ -28,9 +28,16 @@ public:
 	PlayerStat GetPlayerState() { return state; }
 	void attack(std::vector<objBase*>& obj);
 	int GetDefense();
+	void Standby(DeckMng* card);
+	void Reset();
+	int GetHP() { return state.HP; }
 	//void Draw();
 private:
 	void move(char* getKey);
 	PlayerStat state;
+	bool HitBoxtoPoint(VECTOR2 point_pos, VECTOR2 box_pos, VECTOR2 box_size);
+	CardData mouse_point_card;
+	CardData null_data;
+	bool mouse_triger;
 };
 

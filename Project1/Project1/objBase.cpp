@@ -29,3 +29,7 @@ void objBase::attack(std::vector<objBase*>& obj)
 {
 }
 
+void objBase::Reset()
+{
+}
+

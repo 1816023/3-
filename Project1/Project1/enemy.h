@@ -12,6 +12,7 @@ struct EnemyStat {
 	int add_defence;		//アイテムなどによるそのターン限りの追加防御力
 	int def_defense;		//アイテムや敵によるデバフの減算分防御力
 	int enemy_handle;		//画像ハンドル
+	int point;
 };
 class enemy :
 	public objBase
@@ -26,6 +27,8 @@ public:
 	void attack(std::vector<objBase*>& obj);
 	bool GetDamageFlag() { return damageFlag; }
 	int GetDefense();
+	void Standby(DeckMng* card);
+	int GetHP() { return state.HP; }
 private:
 	bool damageFlag;
 	void move();
@@ -34,5 +37,6 @@ private:
 	int netaImageH[3];
 	int netanum;
 	EnemyStat state;
+	std::map < std::string, EnemyStat >enemy_data;
 };
 
