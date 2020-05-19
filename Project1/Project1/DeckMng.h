@@ -11,6 +11,14 @@ enum CARDTYPE
 	NULL_CARD,
 	CARD_MAX
 };
+enum ITEM_TYPE {
+	RECOVERY_HP,
+	RECOVERY_MP,
+	ADD_ATTACK,
+	ADD_DEFENSE,
+	NO_EFFECT,
+	ITEM_TYPE_MAX
+};
 struct CardData {
 	std::string name;		//名前
 	CARDTYPE type;			//カードタイプ
@@ -19,6 +27,7 @@ struct CardData {
 	int image_handle;
 	int attack;				//攻撃力(防具、アイテムの場合はなし)
 	int defense;			//防御力(武器、アイテムの場合はなし)
+	ITEM_TYPE item_type;
 };
 class DeckMng
 {

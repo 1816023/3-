@@ -59,6 +59,7 @@ void player::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 
 void player::damage(int damage_num)
 {
+	state.HP += ((state.defense + state.add_defence - state.def_defense) - damage_num>0?0: (state.defense + state.add_defence - state.def_defense) - damage_num);
 }
 
 void player::Draw(PhasesMng* phases)
@@ -116,19 +117,26 @@ void player::Standby(DeckMng* card)
 			{
 				if (HitBoxtoPoint(m_pos, VECTOR2(150 + (98 + 100) * a - crd_size.x / 2, SCREEN_SIZE_Y / 1.0875f - crd_size.y / 2), crd_size))
 				{
-					if (card->GetHand()[a].type == WEAPON_CARD)
+					switch (card->GetHand()[a].type)
 					{
-						state.weapon_card = card->GetHand()[a];
-						state.attack = state.weapon_card.attack;
-						card->ChangeHand(a, null_data);
-					}
-					else if (card->GetHand()[a].type == ARMOR_CARD)
-					{
-						state.armor_card = card->GetHand()[a];
-						state.defense = state.armor_card.defense;
-						card->ChangeHand(a, null_data);
-
-					}
+						case WEAPON_CARD:
+							state.weapon_card = card->GetHand()[a];
+							state.attack = state.weapon_card.attack;
+							card->ChangeHand(a, null_data);
+							break;
+						case ARMOR_CARD:
+							state.armor_card = card->GetHand()[a];
+							state.defense = state.armor_card.defense;
+							card->ChangeHand(a, null_data);
+							break;
+						case ITEM_CARD:
+							Item(card->GetHand()[a]);
+							card->ChangeHand(a, null_data);
+							break;
+						default:
+							break;
+					} 
+					
 				}
 			}
 			
@@ -170,4 +178,27 @@ bool player::HitBoxtoPoint(VECTOR2 point_pos, VECTOR2 box_pos, VECTOR2 box_size)
 		return false;
 	}
 
+}
+
+void player::Item(CardData data)
+{
+	switch (data.item_type)
+	{
+	case RECOVERY_HP:
+		state.HP += data.attack;
+		break;
+	case RECOVERY_MP:
+		state.MP += data.attack;
+		break;
+	case ADD_ATTACK:
+		state.add_attack += data.attack;
+		break;
+	case ADD_DEFENSE:
+		state.add_defence += data.defense;
+		break;
+	case NO_EFFECT:
+	case ITEM_TYPE_MAX:
+	default:
+		break;
+	}
 }

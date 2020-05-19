@@ -36,6 +36,7 @@ private:
 	void move(char* getKey);
 	PlayerStat state;
 	bool HitBoxtoPoint(VECTOR2 point_pos, VECTOR2 box_pos, VECTOR2 box_size);
+	void Item(CardData data);
 	CardData mouse_point_card;
 	CardData null_data;
 	bool mouse_triger;

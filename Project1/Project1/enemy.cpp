@@ -30,9 +30,10 @@ bool enemy::Init()
 void enemy::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 {
 	move();
-	attack(obj);
+	
 	if (phases->GetNowPhases() == ENEMY_TURN)
 	{
+		attack(obj);
 		phases->ChangePhases(PHASES_DRAW);
 	}
 }

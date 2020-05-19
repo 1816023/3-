@@ -20,7 +20,8 @@ bool DeckMng::Init()
 	"data/card/N00.png",
 	IMAGE_ID("data/card/N00.png")[0],
 	0,
-	0
+	0,
+	NO_EFFECT
 	};
 	cardData_map["ƒqƒmƒL‚Ì–_"] = {
 	"ƒqƒmƒL‚Ì–_",
@@ -29,7 +30,8 @@ bool DeckMng::Init()
 	"data/card/A01.png",
 	IMAGE_ID("data/card/A01.png")[0],
 	2,
-	0
+	0,
+	NO_EFFECT
 	};
 	cardData_map["–Ø‚Ì‚"] = {
 	"–Ø‚Ì‚",
@@ -38,7 +40,8 @@ bool DeckMng::Init()
 	"data/card/S01.png",
 	IMAGE_ID("data/card/S01.png")[0],
 	0,
-	2
+	2,
+	NO_EFFECT
 	};
 	cardData_map["‰ñ•œ‚Ì–ò"] = {
 	"‰ñ•œ‚Ì–ò",
@@ -46,10 +49,11 @@ bool DeckMng::Init()
 	301,
 	"data/card/I01.png",
 	IMAGE_ID("data/card/I01.png")[0],
+	5,
 	0,
-	0
-	
+	RECOVERY_HP
 	};
+
 	deck_vec.push_back(cardData_map["ƒqƒmƒL‚Ì–_"]);
 	deck_vec.push_back(cardData_map["ƒqƒmƒL‚Ì–_"]);
 	deck_vec.push_back(cardData_map["–Ø‚Ì‚"]);
