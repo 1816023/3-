@@ -53,13 +53,99 @@ bool DeckMng::Init()
 	0,
 	RECOVERY_HP
 	};
-
+	cardData_map["回復の薬・改"] = {
+	"回復の薬・改",
+	ITEM_CARD,
+	302,
+	"data/card/I02.png",
+	IMAGE_ID("data/card/I02.png")[0],
+	10,
+	0,
+	RECOVERY_HP
+	};
+	cardData_map["回復の薬・真"] = {
+	"回復の薬・真",
+	ITEM_CARD,
+	303,
+	"data/card/I03.png",
+	IMAGE_ID("data/card/I03.png")[0],
+	15,
+	0,
+	RECOVERY_HP
+	};
+	cardData_map["狂化の丸薬"] = {
+	"狂化の丸薬",
+	ITEM_CARD,
+	304,
+	"data/card/I04.png",
+	IMAGE_ID("data/card/I04.png")[0],
+	5,
+	0,
+	ADD_ATTACK
+	};
+	cardData_map["狂化の丸薬・改"] = {
+	"狂化の丸薬・改",
+	ITEM_CARD,
+	305,
+	"data/card/I05.png",
+	IMAGE_ID("data/card/I05.png")[0],
+	7,
+	0,
+	ADD_ATTACK
+	};
+	cardData_map["狂化の丸薬・真"] = {
+	"狂化の丸薬・真",
+	ITEM_CARD,
+	306,
+	"data/card/I06.png",
+	IMAGE_ID("data/card/I06.png")[0],
+	10,
+	0,
+	ADD_ATTACK
+	};
+	cardData_map["硬化のオイル"] = {
+	"硬化のオイル",
+	ITEM_CARD,
+	307,
+	"data/card/I07.png",
+	IMAGE_ID("data/card/I07.png")[0],
+	5,
+	0,
+	ADD_DEFENSE
+	};
+	cardData_map["硬化のオイル・改"] = {
+	"硬化のオイル・改",
+	ITEM_CARD,
+	308,
+	"data/card/I08.png",
+	IMAGE_ID("data/card/I08.png")[0],
+	7,
+	0,
+	ADD_DEFENSE
+	};
+	cardData_map["硬化のオイル・真"] = {
+	"硬化のオイル・真",
+	ITEM_CARD,
+	309,
+	"data/card/I09.png",
+	IMAGE_ID("data/card/I09.png")[0],
+	10,
+	0,
+	ADD_DEFENSE
+	};
 	deck_vec.push_back(cardData_map["ヒノキの棒"]);
 	deck_vec.push_back(cardData_map["ヒノキの棒"]);
 	deck_vec.push_back(cardData_map["木の盾"]);
 	deck_vec.push_back(cardData_map["木の盾"]);
 	deck_vec.push_back(cardData_map["回復の薬"]);
-	deck_vec.push_back(cardData_map["回復の薬"]);
+	deck_vec.push_back(cardData_map["回復の薬・改"]);
+	deck_vec.push_back(cardData_map["回復の薬・真"]);
+	deck_vec.push_back(cardData_map["狂化の丸薬"]);
+	deck_vec.push_back(cardData_map["狂化の丸薬・改"]);
+	deck_vec.push_back(cardData_map["狂化の丸薬・真"]);
+	deck_vec.push_back(cardData_map["硬化のオイル"]);
+	deck_vec.push_back(cardData_map["硬化のオイル・改"]);
+	deck_vec.push_back(cardData_map["硬化のオイル・真"]);
 
 
 	return false;

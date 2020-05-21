@@ -152,6 +152,8 @@ void player::Reset()
 {
 	state.weapon_card = null_data;
 	state.armor_card = null_data;
+	state.add_attack = 0;
+	state.add_defence = 0;
 }
 
 
