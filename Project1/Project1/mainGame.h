@@ -6,7 +6,7 @@ class PhasesMng;
 class mainGame:public sceneBase
 {
 public:
-	mainGame();
+	mainGame(SCENE_TYPE type);
 	~mainGame();
 	bool Init();
 	void Update();

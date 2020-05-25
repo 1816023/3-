@@ -7,7 +7,7 @@
 #include "mainGame.h"
 
 
-mainGame::mainGame()
+mainGame::mainGame(SCENE_TYPE type):sceneBase(type)
 {
 	obj.push_back(new player("data/texture/player.png"));
 	obj.push_back(new enemy("data/texture/enemySet.png", {0,50}));
@@ -44,6 +44,10 @@ void mainGame::Update()
 	for (int i = 0; i < obj.size(); i++)
 	{
 		obj[i]->update(obj, getKey,phases);
+		if (obj[i]->GetObjctType() == TYPE_PLAYER && obj[i]->GetHP() >= 0)
+		{
+
+		}
 		deleteObjNum.push_back(obj[i]->PlaeseDeath()?i:-1);
 		
 	}
@@ -99,6 +103,10 @@ void mainGame::Draw()
 
 void mainGame::Deahtory()
 {
+	for (auto itr : obj)
+	{
+		
+	}
 	phases->Dehtroy();
 }
 
