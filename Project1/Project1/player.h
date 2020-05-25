@@ -27,10 +27,12 @@ public:
 	void Draw(PhasesMng* phases);		//•`‰æ
 	PlayerStat GetPlayerState() { return state; }
 	void attack(std::vector<objBase*>& obj);
-	int GetDefense();
+	
 	void Standby(DeckMng* card);
 	void Reset();
 	int GetHP() { return state.HP; }
+	int GetDefense() { return state.defense + state.add_defence + state.def_defense; };
+	int GetAttack() { return state.attack + state.add_attack + state.def_attack; }
 	//void Draw();
 private:
 	void move(char* getKey);

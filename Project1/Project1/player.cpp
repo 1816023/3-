@@ -94,10 +94,6 @@ void player::attack(std::vector<objBase*>& obj)
 	
 }
 
-int player::GetDefense()
-{
-	return state.defense+state.add_defence+state.def_defense;
-}
 
 void player::Standby(DeckMng* card)
 {
@@ -154,6 +150,8 @@ void player::Reset()
 	state.armor_card = null_data;
 	state.add_attack = 0;
 	state.add_defence = 0;
+	state.attack = 0;
+	state.defense = 0;
 }
 
 
@@ -196,7 +194,7 @@ void player::Item(CardData data)
 		state.add_attack += data.attack;
 		break;
 	case ADD_DEFENSE:
-		state.add_defence += data.defense;
+		state.add_defence += data.attack;
 		break;
 	case NO_EFFECT:
 	case ITEM_TYPE_MAX:

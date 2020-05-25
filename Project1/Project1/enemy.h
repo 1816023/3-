@@ -3,6 +3,7 @@
 #define MOVE_SPEED 5
 #define DEATH_CNT 60
 struct EnemyStat {
+	std::string name;
 	int HP;					//基本HP
 	int MP;					//基本MP
 	int attack;				//攻撃力
@@ -12,7 +13,8 @@ struct EnemyStat {
 	int add_defence;		//アイテムなどによるそのターン限りの追加防御力
 	int def_defense;		//アイテムや敵によるデバフの減算分防御力
 	int enemy_handle;		//画像ハンドル
-	int point;
+	int point;				//倒した時のポイント
+	int abe_turn;			//倒すのにかかるであろうターン数
 };
 class enemy :
 	public objBase
@@ -26,17 +28,19 @@ public:
 	void damage(int damage_num);
 	void attack(std::vector<objBase*>& obj);
 	bool GetDamageFlag() { return damageFlag; }
-	int GetDefense();
+	
 	void Standby(DeckMng* card);
-	int GetHP() { return state.HP; }
+	int GetHP() { return state[enemy_number].HP; }
+	int GetDefense() { return state[enemy_number].defense + state[enemy_number].add_defence + state[enemy_number].def_defense; }
+	int GetAttack() { return state[enemy_number].attack + state[enemy_number].add_defence + state[enemy_number].def_defense; }
 private:
 	bool damageFlag;
 	void move();
 	bool LRMoveFlag;	//falseで左,trueで右
 	int deathCnt;	
 	int netaImageH[3];
-	int netanum;
-	EnemyStat state;
+	int enemy_number;
+	std::vector<EnemyStat> state;
 	std::map < std::string, EnemyStat >enemy_data;
 };
 

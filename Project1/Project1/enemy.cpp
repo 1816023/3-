@@ -22,8 +22,11 @@ bool enemy::Init()
 	damageFlag = false;
 	LRMoveFlag = true;
 	deathCnt = DEATH_CNT;
-	enemy_data["スライム"] = { 10,10,3,0,0,0,0,0,IMAGE_ID("data/texture/enemy_sra.png")[0],10 };
-	state = enemy_data["スライム"];
+	enemy_data["スライム"] = { "スライム",10,10,3,0,0,0,0,0,IMAGE_ID("data/texture/enemy_sra.png")[0],10,1 };
+	enemy_data["ゴブリン"] = { "ゴブリン",20,0,5,0,0,2,0,0,IMAGE_ID("data/texture/enemy_gob.png")[0],10,2 };
+	state.push_back( enemy_data["スライム"]);
+	state.push_back(enemy_data["ゴブリン"]);
+	enemy_number = 0;
 	return true;
 }
 
@@ -44,13 +47,17 @@ void enemy::Draw( PhasesMng* phases)
 	{
 		DrawRotaGraph(SCREEN_SIZE_X/2, SCREEN_SIZE_Y/2 - 60,1.5,0, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
 	}
-	DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 1, 0, IMAGE_ID("data/texture/enemy_sra.png")[0], true);
-	DrawFormatString(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 0xff0000, "%d\n", state.HP);
+	DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 1, 0,state[enemy_number].enemy_handle, true);
 }
 
 void enemy::damage(int damage_num)
 {
-	state.HP += (GetDefense() - damage_num>0?0: GetDefense() - damage_num);
+	state[enemy_number].HP += (GetDefense() - damage_num>0?0: GetDefense() - damage_num);
+	if (state[enemy_number].HP <= 0)
+	{
+		state[enemy_number] = enemy_data[state[enemy_number].name];
+		enemy_number = (enemy_number+1 >= state.size() ? 0 : enemy_number+1);
+	}
 }
 
 void enemy::attack(std::vector<objBase*>& obj)
@@ -59,15 +66,11 @@ void enemy::attack(std::vector<objBase*>& obj)
 	{
 		if (itr->GetObjctType() == TYPE_PLAYER)
 		{
-			itr->damage(state.attack + state.add_attack + state.def_attack);
+			itr->damage(state[enemy_number].attack + state[enemy_number].add_attack + state[enemy_number].def_attack);
 		}
 	}
 }
 
-int enemy::GetDefense()
-{
-	return state.defense+state.add_defence+state.def_defense;
-}
 
 void enemy::Standby(DeckMng* card)
 {

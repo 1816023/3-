@@ -2,8 +2,9 @@
 #include<vector>
 #include "playerUI.h"
 
-playerUI::playerUI()
+playerUI::playerUI(OBJCT_TYPE objtype) :UIBase(objtype)
 {
+	obj_type = objtype;
 }
 
 playerUI::~playerUI()
@@ -12,7 +13,7 @@ playerUI::~playerUI()
 
 bool playerUI::Init()
 {
-	FontHandle = CreateFontToHandle(NULL, 90, -1, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	
 
 	return true;
 }
@@ -42,12 +43,10 @@ void playerUI::Draw(objBase* obj)
 	//éËéD
 	DrawBox(20, SCREEN_SIZE_Y - crd_size.y/2 - 5, SCREEN_SIZE_X - 20, SCREEN_SIZE_Y - 5, 0xffffff, true);
 	DrawBox(20, SCREEN_SIZE_Y - crd_size.y/2 - 5, SCREEN_SIZE_X - 20, SCREEN_SIZE_Y - 5, 0x000000, false);
-	SetFontSize(50);
-	DrawString(SCREEN_SIZE_X / 2 - GetDrawFormatStringWidth("éËéD") / 2, SCREEN_SIZE_Y - crd_size.y + 20, "éËéD", 0x000000);
-	SetFontSize(def_font_size);
-	
-	DrawFormatStringToHandle(SCREEN_SIZE_X/1.3f, SCREEN_SIZE_Y/1.6, 0xff0000, FontHandle, "HP:%d\n", obj->GetHP());
 
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
-	
+	DrawStringToHandle(SCREEN_SIZE_X / 2 - GetDrawFormatStringWidth("éËéD") / 2, SCREEN_SIZE_Y - crd_size.y + 20, "éËéD", 0x000000, GetFontHandle("AD"));
+	DrawFormatStringToHandle(SCREEN_SIZE_X / 1.3f, SCREEN_SIZE_Y / 1.6, 0xff0000, GetFontHandle("HP"), "HP:%d\n", obj->GetHP());							//HPï\é¶
+	DrawFormatStringToHandle(SCREEN_SIZE_X / 5, SCREEN_SIZE_Y / 1.5, 0xff0000, GetFontHandle("AD"), "%d\n", obj->GetAttack());								//çUåÇï\é¶		
+	DrawFormatStringToHandle(SCREEN_SIZE_X / 5, SCREEN_SIZE_Y / 1.5+60, 0x0000ff, GetFontHandle("AD"), "%d\n", obj->GetDefense());								//ñhå‰ï\é¶
 }
