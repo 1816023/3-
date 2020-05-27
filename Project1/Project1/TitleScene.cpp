@@ -1,3 +1,4 @@
+#include"sceneMng.h"
 #include "TitleScene.h"
 
 TitleScene::TitleScene(SCENE_TYPE type):sceneBase(type)
@@ -14,12 +15,15 @@ bool TitleScene::Init()
 	return false;
 }
 
-void TitleScene::Update()
+void TitleScene::Update(sceneMng* scene)
 {
 	if (GetMouseInput() == MOUSE_INPUT_LEFT)
 	{
-
-
+		if (!click_triger)
+		{
+			click_triger = true;
+			scene->ChecgeScene(SELECT_S);
+		}
 	}
 	else
 	{
@@ -29,6 +33,7 @@ void TitleScene::Update()
 
 void TitleScene::Draw()
 {
+	DrawGraph(0, 0, IMAGE_ID("data/texture/titleBack.png")[0], true);
 	DrawString(0, 0, "Title", 0xffffff);
 }
 

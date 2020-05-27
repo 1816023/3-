@@ -7,7 +7,7 @@ public:
 	ResultScene(SCENE_TYPE type);
 	~ResultScene();
 	bool Init();
-	void Update();
+	void Update(sceneMng* scene);
 	void Draw();
 	void Deahtory();
 private:

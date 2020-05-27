@@ -7,7 +7,7 @@ public:
 	selectScene(SCENE_TYPE type);
 	~selectScene();
 	bool Init();
-	void Update();
+	void Update(sceneMng* scene);
 	void Draw();
 	void Deahtory();
 private:

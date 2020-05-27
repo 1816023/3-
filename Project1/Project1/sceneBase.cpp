@@ -1,4 +1,4 @@
-#include <DxLib.h>
+#include "sceneMng.h"
 #include "sceneBase.h"
 
 sceneBase::sceneBase(SCENE_TYPE type)
@@ -8,12 +8,4 @@ sceneBase::sceneBase(SCENE_TYPE type)
 
 sceneBase::~sceneBase()
 {
-}
-
-void sceneBase::main()
-{
-	Update();
-	ClearDrawScreen();
-	Draw();
-	ScreenFlip();
 }

@@ -9,7 +9,7 @@ public:
 	mainGame(SCENE_TYPE type);
 	~mainGame();
 	bool Init();
-	void Update();
+	void Update(sceneMng* scene);
 	void Draw();
 	void Deahtory();
 private:

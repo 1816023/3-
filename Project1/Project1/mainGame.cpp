@@ -4,6 +4,7 @@
 #include "enemy_UI.h"
 #include "PhasesMng.h"
 #include "UIBase.h"
+#include"sceneMng.h"
 #include "mainGame.h"
 
 
@@ -37,7 +38,7 @@ bool mainGame::Init()
 	return true;
 }
 
-void mainGame::Update()
+void mainGame::Update(sceneMng* scene)
 {
 	std::vector<int> deleteObjNum;
 	GetHitKeyStateAll(getKey);
