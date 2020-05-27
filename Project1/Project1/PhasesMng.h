@@ -18,7 +18,7 @@ class PhasesMng
 public:
 	PhasesMng();
 	~PhasesMng();
-	bool Init();
+	bool Init(int deck_type);
 	void updata(std::vector<objBase*> obj);
 	void Draw();
 	void Dehtroy();

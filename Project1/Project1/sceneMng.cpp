@@ -20,7 +20,7 @@ sceneMng::~sceneMng()
 
 void sceneMng::Iint()
 {
-	sceneClass[nowScene]->Init();
+	sceneClass[nowScene]->Init(this);
 }
 
 void sceneMng::main()
@@ -54,5 +54,5 @@ void sceneMng::ChecgeScene(const SCENE_TYPE scene)
 	default:
 		break;
 	}
-	sceneClass[nowScene]->Init();
+	sceneClass[nowScene]->Init(this);
 }

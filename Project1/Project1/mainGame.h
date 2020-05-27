@@ -8,7 +8,7 @@ class mainGame:public sceneBase
 public:
 	mainGame(SCENE_TYPE type);
 	~mainGame();
-	bool Init();
+	bool Init(sceneMng* scene);
 	void Update(sceneMng* scene);
 	void Draw();
 	void Deahtory();

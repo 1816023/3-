@@ -9,7 +9,7 @@ ResultScene::~ResultScene()
 {
 }
 
-bool ResultScene::Init()
+bool ResultScene::Init(sceneMng* scene)
 {
 	return false;
 }

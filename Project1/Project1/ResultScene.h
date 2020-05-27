@@ -6,7 +6,7 @@ class ResultScene :
 public:
 	ResultScene(SCENE_TYPE type);
 	~ResultScene();
-	bool Init();
+	bool Init(sceneMng* scene);
 	void Update(sceneMng* scene);
 	void Draw();
 	void Deahtory();

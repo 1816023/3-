@@ -21,7 +21,7 @@ mainGame::~mainGame()
 {
 }
 
-bool mainGame::Init()
+bool mainGame::Init(sceneMng* scene)
 {
 	for (auto itr : obj)
 	{
@@ -34,7 +34,7 @@ bool mainGame::Init()
 	{
 		itr->Init();
 	}
-	phases->Init();
+	phases->Init(scene->GetDcekType());
 	return true;
 }
 

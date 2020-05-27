@@ -13,7 +13,7 @@ PhasesMng::~PhasesMng()
 {
 }
 
-bool PhasesMng::Init()
+bool PhasesMng::Init(int deck_type)
 {
 	now_phases = PHASES_DRAW;
 	ph_vec.resize(PHASES_MAX);
@@ -29,7 +29,7 @@ bool PhasesMng::Init()
 	ph_vec[PHASES_END]->Init();
 
 	
-	card->Init();
+	card->Init(deck_type);
 	return false;
 }
 

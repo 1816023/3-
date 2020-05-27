@@ -34,7 +34,7 @@ class DeckMng
 public:
 	DeckMng();
 	~DeckMng();
-	bool Init();
+	bool Init(int deck_type);
 	CardData Choice(std::string name);	//名前でカードを検索、なかった場合は空のデータを返す
 	CardData Choice(int num);			//番号でカードを検索、なかった場合は空のデータを返す
 	CardData Draw();					//手札をすべて消してランダムで5枚選ぶ
@@ -46,7 +46,9 @@ private:
 	std::map<std::string, CardData>cardData_map;
 	std::vector<CardData>hand_vec;
 	std::map<int, CardData>hand_map;
-
-
+	void CardLoad();
+	void DeckLoad();
+	std::vector<std::vector<CardData>> deck;
+	int deck_type;
 };
 
