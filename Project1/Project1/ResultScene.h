@@ -1,5 +1,6 @@
 #pragma once
 #include "sceneBase.h"
+#include <DxLib.h>
 class ResultScene :
 	public sceneBase
 {
@@ -11,5 +12,9 @@ public:
 	void Draw();
 	void Deahtory();
 private:
+	bool AddRanking(int point);
+	std::array<int, 5> ranking;
+	bool out_of_ranking;
+	bool LoadandSave(int point);
 };
 

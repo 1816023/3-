@@ -1,5 +1,2 @@
-﻿  selectScene.cpp
-D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\selectScene.cpp(79,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\selectScene.cpp(80,28): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\selectScene.cpp(93,136): warning C4244:  '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+﻿  ResultScene.cpp
   Project1.vcxproj -> D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Debug\Project1.exe

@@ -42,29 +42,39 @@ void mainGame::Update(sceneMng* scene)
 {
 	std::vector<int> deleteObjNum;
 	GetHitKeyStateAll(getKey);
-	for (int i = 0; i < obj.size(); i++)
-	{
-		obj[i]->update(obj, getKey,phases);
-		if (obj[i]->GetObjctType() == TYPE_PLAYER && obj[i]->GetHP() >= 0)
-		{
-
-		}
-		deleteObjNum.push_back(obj[i]->PlaeseDeath()?i:-1);
-		
-	}
+	
 	for (auto itr : UI)
 	{
 		itr->Updata(obj);
 	}
 	phases->updata(obj);
-
-	for(auto obj_itr:deleteObjNum)
-	if (obj_itr != -1)
+	for (int i = 0; i < obj.size(); i++)
 	{
-		delete(obj[obj_itr]);
-		
-		obj.erase(obj.begin()+obj_itr);
+		obj[i]->update(obj, getKey, phases);
+		if (obj[i]->GetObjctType() == TYPE_PLAYER && obj[i]->GetHP() <= 0)
+		{
+			scene->ChecgeScene(RESULT_S);
+			break;
+		}
+		if (obj[i]->GetObjctType() == TYPE_ENEMY)
+		{
+			scene->SetPoint(obj[i]->GetPoint());
+			point = scene->GetPoint();
+		}
+		deleteObjNum.push_back(obj[i]->PlaeseDeath() ? i : -1);
+
 	}
+
+	for (auto obj_itr : deleteObjNum)
+	{
+		if (obj_itr != -1)
+		{
+			delete(obj[obj_itr]);
+
+			obj.erase(obj.begin() + obj_itr);
+		}
+	}
+
 }
 
 void mainGame::Draw()
@@ -99,7 +109,7 @@ void mainGame::Draw()
 	
 	phases->Draw();
 	DrawFormatString(0, 0, 0xffffff, "%d\n", obj.size());
-	
+	DrawFormatString(0, 20, 0xffffff, "%d\n", point);
 }
 
 void mainGame::Deahtory()

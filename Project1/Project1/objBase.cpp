@@ -33,3 +33,8 @@ void objBase::Reset()
 {
 }
 
+int objBase::GetPoint()
+{
+	return 0;
+}
+

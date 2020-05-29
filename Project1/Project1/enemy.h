@@ -33,6 +33,8 @@ public:
 	int GetHP() { return state[enemy_number].HP; }
 	int GetDefense() { return state[enemy_number].defense + state[enemy_number].add_defence + state[enemy_number].def_defense; }
 	int GetAttack() { return state[enemy_number].attack + state[enemy_number].add_defence + state[enemy_number].def_defense; }
+	int GetPoint() { return defeat_point; }
+	EnemyStat GetState()const { return state[enemy_number]; }
 private:
 	bool damageFlag;
 	void move();
@@ -42,5 +44,6 @@ private:
 	int enemy_number;
 	std::vector<EnemyStat> state;
 	std::map < std::string, EnemyStat >enemy_data;
+	int defeat_point;
 };
 

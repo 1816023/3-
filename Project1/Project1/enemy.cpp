@@ -104,6 +104,7 @@ void enemy::damage(int damage_num)
 	state[enemy_number].HP += (GetDefense() - damage_num>0?0: GetDefense() - damage_num);
 	if (state[enemy_number].HP <= 0)
 	{
+		defeat_point += state[enemy_number].point;
 		state[enemy_number] = enemy_data[state[enemy_number].name];
 		enemy_number = (enemy_number+1 >= state.size() ? 0 : enemy_number+1);
 	}

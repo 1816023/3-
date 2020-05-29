@@ -52,6 +52,7 @@ public:
 	virtual int GetHP() = 0;
 	virtual int GetDefense()=0;
 	virtual int GetAttack() = 0;
+	virtual int GetPoint();
 private:
 	
 protected:

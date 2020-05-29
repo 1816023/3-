@@ -18,5 +18,6 @@ private:
 
 	std::vector<UIBase*> UI;
 	PhasesMng* phases;
+	int point;
 };
 

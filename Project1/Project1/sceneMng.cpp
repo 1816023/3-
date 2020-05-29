@@ -20,6 +20,7 @@ sceneMng::~sceneMng()
 
 void sceneMng::Iint()
 {
+	enemy_point = 0;
 	sceneClass[nowScene]->Init(this);
 }
 
@@ -55,4 +56,9 @@ void sceneMng::ChecgeScene(const SCENE_TYPE scene)
 		break;
 	}
 	sceneClass[nowScene]->Init(this);
+}
+
+void sceneMng::SetPoint(int point)
+{
+	enemy_point = point;
 }
