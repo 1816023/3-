@@ -1,2 +1,16 @@
 ﻿  ResultScene.cpp
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(50,40): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(54,55): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(54,40): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(58,55): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(58,40): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(62,55): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(62,40): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(66,55): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(66,40): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(70,55): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(70,40): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  sceneMng.cpp
+  コードを生成中...
+D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\ResultScene.cpp(73,46): warning C4244:  '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   Project1.vcxproj -> D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Debug\Project1.exe

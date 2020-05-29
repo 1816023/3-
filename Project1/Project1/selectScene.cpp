@@ -92,7 +92,7 @@ void selectScene::Draw()
 	DrawStringFToHandle(SCREEN_SIZE_X / 4 * 3 - CARD_SIZE_X / 2-30, SCREEN_SIZE_Y / 2 + CARD_SIZE_Y / 2, "バランス型デッキ", 0x00ff33, FontHandle);
 	DrawStringToHandle(SCREEN_SIZE_X / 2 - GetDrawFormatStringWidthToHandle(FontHandle,deck_text[select_deck].c_str()) / 2, SCREEN_SIZE_Y / 1.25, deck_text[select_deck].c_str(), 0xffffff, FontHandle,0x991166);
 	
-	DrawString(0, 0, "selsect", 0xffffff);
+	//DrawString(0, 0, "selsect", 0xffffff);
 }
 
 void selectScene::Deahtory()

@@ -63,8 +63,8 @@ void TitleScene::Draw()
 	}
 
 	DrawGraph(0, 0, IMAGE_ID("data/texture/titleBack.png")[0], true);
-	DrawString(0, 0, "Title", 0xffffff);
-	DrawFormatString(0, 20, 0xff0000, "%d\n", anim.size());
+	//DrawString(0, 0, "Title", 0xffffff);
+	//DrawFormatString(0, 20, 0xff0000, "%d\n", anim.size());
 	if (flash_cnt /10 % 2)
 	{
 		DrawString(SCREEN_SIZE_X/2- GetDrawFormatStringWidth("Please Push")/2, SCREEN_SIZE_Y/1.25, "Please Push", 0xffff00);

@@ -16,5 +16,9 @@ private:
 	std::array<int, 5> ranking;
 	bool out_of_ranking;
 	bool LoadandSave(int point);
+	int FontHandle;
+	int MyPoint;
+	std::map<std::string, int> cnt;
+	std::map<std::string, VECTOR2> pos;
 };
 

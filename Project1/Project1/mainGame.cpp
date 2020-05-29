@@ -79,7 +79,8 @@ void mainGame::Update(sceneMng* scene)
 
 void mainGame::Draw()
 {
-	DrawBox(0, 0, SCREEN_SIZE_X, SCREEN_SIZE_Y, 0x009900, true);
+	DrawBox(0, SCREEN_SIZE_Y/2, SCREEN_SIZE_X, SCREEN_SIZE_Y, 0x009900, true);
+	DrawExtendGraph(0, 0, SCREEN_SIZE_X, SCREEN_SIZE_Y/2, IMAGE_ID("data/texture/backImage.jpg")[0], true);
 	for (auto itr : obj)
 	{
 		for (auto ui : UI)
@@ -108,8 +109,8 @@ void mainGame::Draw()
 	}
 	
 	phases->Draw();
-	DrawFormatString(0, 0, 0xffffff, "%d\n", obj.size());
-	DrawFormatString(0, 20, 0xffffff, "%d\n", point);
+	//DrawFormatString(0, 0, 0xffffff, "%d\n", obj.size());
+	//DrawFormatString(0, 20, 0xffffff, "%d\n", point);
 }
 
 void mainGame::Deahtory()
