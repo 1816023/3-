@@ -57,7 +57,7 @@ void player::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 
 }
 
-void player::damage(int damage_num)
+int player::damage(int damage_num)
 {
 	state.HP += ((state.defense + state.add_defence - state.def_defense) - damage_num>0?0: (state.defense + state.add_defence - state.def_defense) - damage_num);
 }
@@ -82,16 +82,19 @@ void player::Draw(PhasesMng* phases)
 	}
 }
 
-void player::attack(std::vector<objBase*>& obj)
+bool player::attack(std::vector<objBase*>& obj)
 {
 	for (auto itr : obj)
 	{
 		if (itr->GetObjctType() == TYPE_ENEMY)
 		{
-			itr->damage(state.attack + state.add_attack + state.def_attack);
+			if (itr->damage(state.attack + state.add_attack + state.def_attack)==0)
+			{
+				return true;
+			}
 		}
 	}
-	
+	return false;
 }
 
 

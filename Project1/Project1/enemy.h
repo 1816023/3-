@@ -26,7 +26,7 @@ public:
 	void update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases);
 	void Draw(PhasesMng* phases);
 	void damage(int damage_num);
-	void attack(std::vector<objBase*>& obj);
+	bool attack(std::vector<objBase*>& obj);
 	bool GetDamageFlag() { return damageFlag; }
 	
 	void Standby(DeckMng* card);

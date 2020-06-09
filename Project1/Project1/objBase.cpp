@@ -25,9 +25,7 @@ std::string objBase::GetImageName()
 	return data.imageName;
 }
 
-void objBase::attack(std::vector<objBase*>& obj)
-{
-}
+
 
 void objBase::Reset()
 {

@@ -26,7 +26,7 @@ public:
 	void damage(int damage_num);
 	void Draw(PhasesMng* phases);		//•`‰æ
 	PlayerStat GetPlayerState() { return state; }
-	void attack(std::vector<objBase*>& obj);
+	bool attack(std::vector<objBase*>& obj);
 	
 	void Standby(DeckMng* card);
 	void Reset();

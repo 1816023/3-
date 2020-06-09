@@ -20,5 +20,10 @@ private:
 	int MyPoint;
 	std::map<std::string, int> cnt;
 	std::map<std::string, VECTOR2> pos;
+	std::vector<AnimMng*> anim;
+	std::vector<std::string>back_vec;
+
+	void CreatBackCard();
+	void EraseBackCard();
 };
 

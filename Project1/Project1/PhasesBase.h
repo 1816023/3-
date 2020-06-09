@@ -17,10 +17,12 @@ public:
 	virtual bool Init()=0;
 	virtual void Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases, DeckMng* card, std::vector<objBase*> obj)=0;
 	virtual void Draw(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases, DeckMng* card);
+	virtual int GetTurn() { return turn; }
 private:
 protected:
 	std::string image_name;
 	bool triger_flag;
 	bool click_flag;
+	static int turn;
 };
 

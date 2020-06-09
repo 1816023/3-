@@ -27,6 +27,7 @@ public:
 	std::vector<CardData> GetHand();
 	void DelHand(int number);
 	void ChangeHand(int num, CardData data);
+	
 private:
 	PHASESTYPE now_phases;
 	std::vector<PhasesBase*> ph_vec;

@@ -45,7 +45,7 @@ public:
 	virtual obj_data GetObjData() { return data; }
 	virtual bool PlaeseDeath() { return deathFlag; };
 	virtual void damage(int damage_num) = 0;		//ˆø”‚Í—^‚¦‚é–hŒä—Í‚ğŒvZ‚µ‚Ä‚È‚¢ÀŞÒ°¼Ş
-	virtual void attack(std::vector<objBase*>& obj)=0;
+	virtual bool attack(std::vector<objBase*>& obj)=0;
 	virtual bool GetDamageFlag() { return false; }
 	virtual void Standby(DeckMng* card)=0;
 	virtual void Reset();

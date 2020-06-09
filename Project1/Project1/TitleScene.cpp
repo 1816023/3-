@@ -14,7 +14,7 @@ TitleScene::~TitleScene()
 bool TitleScene::Init(sceneMng* scene)
 {
 	anim.resize(0);
-	click_triger = false;
+	click_triger = true;
 	back_vec.resize(0);
 	back_vec.push_back("data/card/backTurn.png");
 	back_vec.push_back("data/card/backTurn2.png");
