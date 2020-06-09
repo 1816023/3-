@@ -59,7 +59,7 @@ void player::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 
 int player::damage(int damage_num)
 {
-	state.HP += ((state.defense + state.add_defence - state.def_defense) - damage_num>0?0: (state.defense + state.add_defence - state.def_defense) - damage_num);
+	return state.HP += ((state.defense + state.add_defence - state.def_defense) - damage_num>0?0: (state.defense + state.add_defence - state.def_defense) - damage_num);
 }
 
 void player::Draw(PhasesMng* phases)

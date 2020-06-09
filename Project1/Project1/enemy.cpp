@@ -20,6 +20,7 @@ bool enemy::Init()
 	//LoadDivGraph(data.imageName.c_str(), 2, 2, 1, 64, 45, data.imageDivH);
 	
 	damageFlag = false;
+	damage_counter = 0;
 	LRMoveFlag = true;
 	deathCnt = DEATH_CNT;
 	enemy_data["スライム"]		=	{ "スライム",		10,	0,	3,	0,0,0,	0,0,IMAGE_ID("data/texture/enemy_sra.png")	[0],10,		1  };
@@ -88,15 +89,31 @@ void enemy::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 		attack(obj);
 		phases->ChangePhases(PHASES_DRAW);
 	}
+	if (damageFlag)
+	{
+		damage_counter++;
+		if (damage_counter > 30)
+		{
+			damageFlag = false;
+			damage_counter = 0;
+		}
+	}
 }
 
-void enemy::Draw( PhasesMng* phases)
+void enemy::Draw(PhasesMng* phases)
 {
+
 	if (phases->GetNowPhases() == ENEMY_TURN)
 	{
-		DrawRotaGraph(SCREEN_SIZE_X/2, SCREEN_SIZE_Y/2 - 60,1.5,0, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
+
+		DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 2 - 60, 1.5, 0, IMAGE_ID("data/texture/EnemyTurnImage.png")[0], true);
+
+
 	}
-	DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 1, 0,state[enemy_number].enemy_handle, true);
+	if (!(damage_counter / 3 % 2))
+	{
+		DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 1, 0, state[enemy_number].enemy_handle, true);
+	}
 }
 
 int enemy::damage(int damage_num)
@@ -109,6 +126,9 @@ int enemy::damage(int damage_num)
 		state[enemy_number] = enemy_data[state[enemy_number].name];
 		enemy_number = (enemy_number+1 >= state.size() ? 0 : enemy_number+1);
 		return 0;
+	}
+	else {
+		damageFlag = true;
 	}
 	return state[enemy_number].HP;
 }

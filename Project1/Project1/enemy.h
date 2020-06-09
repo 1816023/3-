@@ -25,7 +25,7 @@ public:
 	bool Init();
 	void update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases);
 	void Draw(PhasesMng* phases);
-	void damage(int damage_num);
+	int damage(int damage_num);
 	bool attack(std::vector<objBase*>& obj);
 	bool GetDamageFlag() { return damageFlag; }
 	
@@ -37,6 +37,7 @@ public:
 	EnemyStat GetState()const { return state[enemy_number]; }
 private:
 	bool damageFlag;
+	int damage_counter;
 	void move();
 	bool LRMoveFlag;	//false‚Å¶,true‚Å‰E
 	int deathCnt;	
@@ -45,5 +46,6 @@ private:
 	std::vector<EnemyStat> state;
 	std::map < std::string, EnemyStat >enemy_data;
 	int defeat_point;
+
 };
 

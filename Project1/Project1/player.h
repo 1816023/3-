@@ -23,7 +23,7 @@ public:
 	~player();
 	bool Init();
 	void update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases);
-	void damage(int damage_num);
+	int damage(int damage_num);
 	void Draw(PhasesMng* phases);		//•`‰æ
 	PlayerStat GetPlayerState() { return state; }
 	bool attack(std::vector<objBase*>& obj);

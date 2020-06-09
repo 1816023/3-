@@ -45,6 +45,7 @@ void PhasesAttack::Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phas
 					{
 						if (itr->attack(obj))
 						{
+
 							turn = 0;
 						}
 						
