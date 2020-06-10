@@ -59,7 +59,9 @@ void player::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 
 int player::damage(int damage_num)
 {
+	PlaySound("data/sound/SE/damage.mp3", DX_PLAYTYPE_BACK);
 	return state.HP += ((state.defense + state.add_defence - state.def_defense) - damage_num>0?0: (state.defense + state.add_defence - state.def_defense) - damage_num);
+
 }
 
 void player::Draw(PhasesMng* phases)
@@ -116,6 +118,7 @@ void player::Standby(DeckMng* card)
 			{
 				if (HitBoxtoPoint(m_pos, VECTOR2(150 + (98 + 100) * a - crd_size.x / 2, SCREEN_SIZE_Y / 1.0875f - crd_size.y / 2), crd_size))
 				{
+					PlaySound("data/sound/SE/draw.wav", DX_PLAYTYPE_BACK);
 					switch (card->GetHand()[a].type)
 					{
 						case WEAPON_CARD:

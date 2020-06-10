@@ -10,5 +10,6 @@ public:
 	void Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phases, DeckMng* card, std::vector<objBase*> obj);
 private:
 	bool drawF;
+	bool change_phases_F;
 };
 

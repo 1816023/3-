@@ -6,6 +6,7 @@
 #include "ImageMng.h"
 #include "PhasesMng.h"
 #include "PhasesBase.h"
+#include "SoundMng.h"
 #define SCREEN_SIZE_X 1230
 #define SCREEN_SIZE_Y 960
 class PhasesMng;

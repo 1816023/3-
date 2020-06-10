@@ -118,7 +118,22 @@ void enemy::Draw(PhasesMng* phases)
 
 int enemy::damage(int damage_num)
 {
-	state[enemy_number].HP += (GetDefense() - damage_num>0?0: GetDefense() - damage_num);
+	int actual_damage = (GetDefense() - damage_num > 0 ? 0 : GetDefense() - damage_num);
+	state[enemy_number].HP += actual_damage;
+	if (actual_damage*-1 == 0)
+	{
+		PlaySound("data/sound/SE/defense1.mp3", DX_PLAYTYPE_BACK);
+	}
+	else if (actual_damage*-1 <= 5)
+	{
+		PlaySound("data/sound/SE/punch2b.mp3", DX_PLAYTYPE_BACK);
+	}
+	else if(actual_damage*-1<=13){
+		PlaySound("data/sound/SE/middle_punch2.mp3", DX_PLAYTYPE_BACK);
+	}
+	else {
+		PlaySound("data/sound/SE/heavy_punch2.mp3", DX_PLAYTYPE_BACK);
+	}
 	if (state[enemy_number].HP <= 0)
 	{
 		defeat_point += state[enemy_number].point;
@@ -128,8 +143,10 @@ int enemy::damage(int damage_num)
 		return 0;
 	}
 	else {
-		damageFlag = true;
+		
+		damageFlag = (actual_damage==0?false:true);
 	}
+	
 	return state[enemy_number].HP;
 }
 

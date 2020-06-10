@@ -6,7 +6,7 @@
 #include "PhasesMng.h"
 #include "DeckMng.h"
 #include "objBase.h"
-
+#include "SoundMng.h"
 class DeckMng;
 class objBase;
 class PhasesBase
