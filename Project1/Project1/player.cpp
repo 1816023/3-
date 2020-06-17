@@ -59,8 +59,16 @@ void player::update(std::vector<objBase*>&obj, char* getKey, PhasesMng* phases)
 
 int player::damage(int damage_num)
 {
-	PlaySound("data/sound/SE/damage.mp3", DX_PLAYTYPE_BACK);
-	return state.HP += ((state.defense + state.add_defence - state.def_defense) - damage_num>0?0: (state.defense + state.add_defence - state.def_defense) - damage_num);
+	int damage = ((state.defense + state.add_defence - state.def_defense) - damage_num > 0 ? 0 : (state.defense + state.add_defence - state.def_defense) - damage_num);
+	if (damage *-1> 0)
+	{
+		PlaySound("data/sound/SE/damage.mp3", DX_PLAYTYPE_BACK);
+
+	}
+	else {
+		PlaySound("data/sound/SE/sword2.mp3", DX_PLAYTYPE_BACK);
+	}
+	return state.HP +=damage;
 
 }
 
@@ -192,6 +200,7 @@ void player::Item(CardData data)
 	{
 	case RECOVERY_HP:
 		state.HP += data.attack;
+		PlaySound("data/sound/SE/heal.mp3", DX_PLAYTYPE_BACK);
 		break;
 	case RECOVERY_MP:
 		state.MP += data.attack;

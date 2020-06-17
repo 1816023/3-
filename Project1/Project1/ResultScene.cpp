@@ -21,6 +21,7 @@ ResultScene::~ResultScene()
 
 bool ResultScene::Init(sceneMng* scene)
 {
+	lpSoundMng.StopSound("data/sound/BGM/’†ƒ{ƒX‚­‚ç‚¢‚Ìí“¬•—_2.mp3");
 	for (auto rnk : ranking)
 	{
 		rnk = 0;

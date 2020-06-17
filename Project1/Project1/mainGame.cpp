@@ -23,6 +23,7 @@ mainGame::~mainGame()
 
 bool mainGame::Init(sceneMng* scene)
 {
+	PlaySound("data/sound/BGM/’†ƒ{ƒX‚­‚ç‚¢‚Ìí“¬•—_2.mp3", DX_PLAYTYPE_LOOP);
 	for (auto itr : obj)
 	{
 		if (itr->Init() == false)

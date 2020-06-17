@@ -5,6 +5,7 @@
 #include <vector>
 #include <DxLib.h>
 #include "ImageMng.h"
+#include "SoundMng.h"
 #define CARD_SIZE_X 192
 #define CARD_SIZE_Y 270
 #define SCREEN_SIZE_X 1230
