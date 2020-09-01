@@ -1,3 +1,0 @@
-﻿  enemy.cpp
-D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Project1\enemy.cpp(127,34): warning C4018:  '>=': signed と unsigned の数値を比較しようとしました。
-  Project1.vcxproj -> D:\desktop\ASO\プログラム\自作カードゲーム案\3-\Project1\Debug\Project1.exe

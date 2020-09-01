@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="AnimMng.cpp" />
     <ClCompile Include="DeckMng.cpp" />
+    <ClCompile Include="EffectMng.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemy_UI.cpp" />
     <ClCompile Include="ImageMng.cpp" />
@@ -165,6 +166,7 @@
   <ItemGroup>
     <ClInclude Include="AnimMng.h" />
     <ClInclude Include="DeckMng.h" />
+    <ClInclude Include="EffectMng.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemy_UI.h" />
     <ClInclude Include="ImageMng.h" />

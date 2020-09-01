@@ -1,3 +1,5 @@
+#include "EffectMng.h"
+
 #include"mainGame.h"
 #include"TitleScene.h"
 #include"selectScene.h"
@@ -22,6 +24,8 @@ void sceneMng::Iint()
 {
 	enemy_point = 0;
 	sceneClass[nowScene]->Init(this);
+
+	lpEffectMng.Init(VECTOR2(SCREEN_SIZE_X,SCREEN_SIZE_Y));
 }
 
 void sceneMng::main()
