@@ -39,6 +39,8 @@ bool mainGame::Init(sceneMng* scene)
 	phases->Init(scene->GetDcekType());
 	lpEffectMng.LoadEffect("ToonHit", 30.0f);
 	lpEffectMng.LoadEffect("healing", 20.0f);
+	lpEffectMng.LoadEffect("Attack_buff", 20.0f);
+	lpEffectMng.LoadEffect("Defense_buff", 20.0f);
 	return true;
 }
 

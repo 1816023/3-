@@ -209,9 +209,11 @@ void player::Item(CardData data)
 		state.MP += data.attack;
 		break;
 	case ADD_ATTACK:
+		lpEffectMng.AddPlayList("Attack_buff", SCREEN_SIZE_X / 2, 775.0f);
 		state.add_attack += data.attack;
 		break;
 	case ADD_DEFENSE:
+		lpEffectMng.AddPlayList("Defense_buff", SCREEN_SIZE_X / 2, 775.0f);
 		state.add_defence += data.attack;
 		break;
 	case NO_EFFECT:
