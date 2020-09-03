@@ -1,5 +1,6 @@
 #include<string>
 #include<vector>
+#include "EffectMng.h"
 #include "playerUI.h"
 
 playerUI::playerUI(OBJCT_TYPE objtype) :UIBase(objtype)

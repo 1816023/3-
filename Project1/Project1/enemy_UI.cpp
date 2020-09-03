@@ -1,3 +1,4 @@
+#include "EffectMng.h"
 #include "enemy_UI.h"
 
 enemy_UI::enemy_UI(OBJCT_TYPE objtype):UIBase(objtype)

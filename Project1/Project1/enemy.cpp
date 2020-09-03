@@ -1,3 +1,5 @@
+#include "EffectMng.h"
+
 #include "enemy.h"
 #include"ImageMng.h"
 
@@ -114,6 +116,8 @@ void enemy::Draw(PhasesMng* phases)
 	{
 		DrawRotaGraph(SCREEN_SIZE_X / 2, SCREEN_SIZE_Y / 4 - 60, 1, 0, state[enemy_number].enemy_handle, true);
 	}
+
+	lpEffectMng.Draw();
 }
 
 int enemy::damage(int damage_num)
@@ -136,6 +140,7 @@ int enemy::damage(int damage_num)
 	}
 	if (state[enemy_number].HP <= 0)
 	{
+		//lpEffectMng.AddPlayList("ToonHit", SCREEN_SIZE_X / 2, 100);
 		defeat_point += state[enemy_number].point;
 
 		state[enemy_number] = enemy_data[state[enemy_number].name];
@@ -145,8 +150,12 @@ int enemy::damage(int damage_num)
 	else {
 		
 		damageFlag = (actual_damage==0?false:true);
+		if (damageFlag)
+		{
+			lpEffectMng.AddPlayList("ToonHit", 615, 100.0f);
+		}
 	}
-	
+
 	return state[enemy_number].HP;
 }
 

@@ -3,6 +3,7 @@
 #include "playerUI.h"
 #include "enemy_UI.h"
 #include "PhasesMng.h"
+#include "EffectMng.h"
 #include "UIBase.h"
 #include"sceneMng.h"
 #include "mainGame.h"
@@ -36,6 +37,8 @@ bool mainGame::Init(sceneMng* scene)
 		itr->Init();
 	}
 	phases->Init(scene->GetDcekType());
+	lpEffectMng.LoadEffect("ToonHit", 30.0f);
+	lpEffectMng.LoadEffect("healing", 30.0f);
 	return true;
 }
 
@@ -49,6 +52,7 @@ void mainGame::Update(sceneMng* scene)
 		itr->Updata(obj);
 	}
 	phases->updata(obj);
+	lpEffectMng.UpData();
 	for (int i = 0; i < obj.size(); i++)
 	{
 		obj[i]->update(obj, getKey, phases);
@@ -75,7 +79,6 @@ void mainGame::Update(sceneMng* scene)
 			obj.erase(obj.begin() + obj_itr);
 		}
 	}
-
 }
 
 void mainGame::Draw()

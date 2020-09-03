@@ -44,5 +44,6 @@ private:
 
 	float pos_x;
 	float pos_y;
+	int num;
 };
 

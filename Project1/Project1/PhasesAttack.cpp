@@ -1,3 +1,4 @@
+#include "EffectMng.h"
 #include "PhasesAttack.h"
 
 PhasesAttack::PhasesAttack(std::string image_name):PhasesBase(image_name)
@@ -45,7 +46,6 @@ void PhasesAttack::Updata(std::vector<PhasesBase*> &ph_vec, PHASESTYPE& now_phas
 					{
 						if (itr->attack(obj))
 						{
-
 							turn = 0;
 						}
 						

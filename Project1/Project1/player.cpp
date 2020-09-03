@@ -1,3 +1,4 @@
+#include "EffectMng.h"
 #include "DeckMng.h"
 #include "player.h"
 player::player(std::string image_name):objBase(image_name)
@@ -34,6 +35,7 @@ bool player::Init()
 		null_data
 	};
 	mouse_point_card = { "NullCard",NULL_CARD,500,"data/card/N00.png",IMAGE_ID("data/card/N00.png")[0],0,0 };
+
 	mouse_triger = false;
 	return true;
 }
@@ -110,13 +112,13 @@ bool player::attack(std::vector<objBase*>& obj)
 
 void player::Standby(DeckMng* card)
 {
-	
-			VECTOR2 crd_size = { 192*0.75f,270*0.75f };
-			VECTOR2 m_pos;
-			GetMousePoint(&m_pos.x, &m_pos.y);
-			int hand_size = card->GetHand().size();
-			std::vector<bool>delete_cnt = {};
-			delete_cnt.resize(hand_size);
+
+	VECTOR2 crd_size = { 192 * 0.75f,270 * 0.75f };
+	VECTOR2 m_pos;
+	GetMousePoint(&m_pos.x, &m_pos.y);
+	int hand_size = card->GetHand().size();
+	std::vector<bool>delete_cnt = {};
+	delete_cnt.resize(hand_size);
 	if ((GetMouseInput() & MOUSE_INPUT_LEFT) == 1)
 	{
 		if (!mouse_triger)
@@ -129,27 +131,27 @@ void player::Standby(DeckMng* card)
 					PlaySound("data/sound/SE/draw.wav", DX_PLAYTYPE_BACK);
 					switch (card->GetHand()[a].type)
 					{
-						case WEAPON_CARD:
-							state.weapon_card = card->GetHand()[a];
-							state.attack = state.weapon_card.attack;
-							card->ChangeHand(a, null_data);
-							break;
-						case ARMOR_CARD:
-							state.armor_card = card->GetHand()[a];
-							state.defense = state.armor_card.defense;
-							card->ChangeHand(a, null_data);
-							break;
-						case ITEM_CARD:
-							Item(card->GetHand()[a]);
-							card->ChangeHand(a, null_data);
-							break;
-						default:
-							break;
-					} 
-					
+					case WEAPON_CARD:
+						state.weapon_card = card->GetHand()[a];
+						state.attack = state.weapon_card.attack;
+						card->ChangeHand(a, null_data);
+						break;
+					case ARMOR_CARD:
+						state.armor_card = card->GetHand()[a];
+						state.defense = state.armor_card.defense;
+						card->ChangeHand(a, null_data);
+						break;
+					case ITEM_CARD:
+						Item(card->GetHand()[a]);
+						card->ChangeHand(a, null_data);
+						break;
+					default:
+						break;
+					}
+
 				}
 			}
-			
+
 		}
 
 	}
@@ -199,6 +201,7 @@ void player::Item(CardData data)
 	switch (data.item_type)
 	{
 	case RECOVERY_HP:
+		lpEffectMng.AddPlayList("healing", -615, 1000.0f);
 		state.HP += data.attack;
 		PlaySound("data/sound/SE/heal.mp3", DX_PLAYTYPE_BACK);
 		break;

@@ -1,3 +1,4 @@
+#include "EffectMng.h"
 #include "PhasesStanby.h"
 
 PhasesStanby::PhasesStanby(std::string image_name) :PhasesBase(image_name)
