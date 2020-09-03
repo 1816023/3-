@@ -37,9 +37,9 @@ void EffectMng::LoadEffect(string name, float magnification)
 //呼び出したいタイミングの処理で一緒に呼ぶ
 void EffectMng::AddPlayList(string name, float pos_x, float pos_y)
 {
-	play_list.push_back(PlayEffekseer2DEffect(effect_map[name]));
+	play_list.push_front(PlayEffekseer2DEffect(effect_map[name]));
 	
-	num = SetPosPlayingEffekseer2DEffect(effect_map[name], pos_x, pos_y, 0);
+	num = SetPosPlayingEffekseer2DEffect(play_list.front(), pos_x, pos_y, 0);
 
 }
 

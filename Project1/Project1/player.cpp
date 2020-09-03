@@ -201,7 +201,7 @@ void player::Item(CardData data)
 	switch (data.item_type)
 	{
 	case RECOVERY_HP:
-		lpEffectMng.AddPlayList("healing", -615, 1000.0f);
+		lpEffectMng.AddPlayList("healing", SCREEN_SIZE_X / 2,775.0f);
 		state.HP += data.attack;
 		PlaySound("data/sound/SE/heal.mp3", DX_PLAYTYPE_BACK);
 		break;

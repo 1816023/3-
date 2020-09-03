@@ -38,7 +38,7 @@ bool mainGame::Init(sceneMng* scene)
 	}
 	phases->Init(scene->GetDcekType());
 	lpEffectMng.LoadEffect("ToonHit", 30.0f);
-	lpEffectMng.LoadEffect("healing", 30.0f);
+	lpEffectMng.LoadEffect("healing", 20.0f);
 	return true;
 }
 
